@@ -1,0 +1,226 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:controls="clr-namespace:MusicLibrary.View.Controls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type controls:MetroLoading}">
+        <Setter Property="BubblesBrush" Value="Gray"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:MetroLoading}">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Animating" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Bubble0">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Bubble1">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Bubble2">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Bubble3">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Bubble0">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseOut" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3" Value="100">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseIn" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Bubble1">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="0">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseOut" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="100">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseIn" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Bubble2">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseOut" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="100">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseIn" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Bubble3">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="0">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseOut" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="100">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseIn" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="LayoutRoot">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-50" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:3" Value="50" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Bubble4">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Bubble4">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseOut" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="100">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseIn" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Bubble5">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Bubble5">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="-100" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseOut" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2" Value="100">
+                                                <EasingDoubleKeyFrame.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseIn" />
+                                                </EasingDoubleKeyFrame.EasingFunction>
+                                            </EasingDoubleKeyFrame>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <StackPanel Background="{TemplateBinding Background}" 
+                                RenderTransformOrigin="0.5,0.5" 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal"
+                                x:Name="LayoutRoot">
+                        <StackPanel.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform />
+                                <SkewTransform />
+                                <RotateTransform />
+                                <TranslateTransform />
+                            </TransformGroup>
+                        </StackPanel.RenderTransform>
+                        <Ellipse x:Name="Bubble0" Fill="{TemplateBinding BubblesBrush}" Height="{TemplateBinding BubbleSize}" Width="{TemplateBinding BubbleSize}" Margin="4,0" RenderTransformOrigin="0.5,0.5">
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Ellipse x:Name="Bubble1" Fill="{TemplateBinding BubblesBrush}" Height="{TemplateBinding BubbleSize}" Width="{TemplateBinding BubbleSize}" Margin="4,0" RenderTransformOrigin="0.5,0.5">
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Ellipse x:Name="Bubble2" Fill="{TemplateBinding BubblesBrush}" Height="{TemplateBinding BubbleSize}" Width="{TemplateBinding BubbleSize}" Margin="4,0" RenderTransformOrigin="0.5,0.5">
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Ellipse x:Name="Bubble3" Fill="{TemplateBinding BubblesBrush}" Height="{TemplateBinding BubbleSize}" Width="{TemplateBinding BubbleSize}" Margin="4,0" RenderTransformOrigin="0.5,0.5">
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Ellipse x:Name="Bubble4" Fill="{TemplateBinding BubblesBrush}" Height="{TemplateBinding BubbleSize}" Width="{TemplateBinding BubbleSize}" Margin="4,0" RenderTransformOrigin="0.5,0.5">
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Ellipse x:Name="Bubble5" Fill="{TemplateBinding BubblesBrush}" Height="{TemplateBinding BubbleSize}" Width="{TemplateBinding BubbleSize}" Margin="4,0" RenderTransformOrigin="0.5,0.5">
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
