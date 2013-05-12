@@ -91,7 +91,7 @@ namespace MusicLibrary.ViewModel
         {
             this.FirstLibrary = this.SelectDirectory();
         }
-        
+
         private void SelectSecondLibrary_Executed(object parameter)
         {
             this.SecondLibrary = this.SelectDirectory();
@@ -114,13 +114,13 @@ namespace MusicLibrary.ViewModel
             BackgroundWorker bg = new BackgroundWorker();
 
             bg.DoWork += new DoWorkEventHandler(
-                (s, e) => 
+                (s, e) =>
                 {
                     albuns = SerializationManager.JsonLoad<ObservableCollection<Album>>(this.ComparisonFile);
                 });
 
             bg.RunWorkerCompleted += new RunWorkerCompletedEventHandler(
-                (s, e) => 
+                (s, e) =>
                 {
                     this.StartLibraryComparer(albuns);
                     this.IsLoading = false;
@@ -176,24 +176,27 @@ namespace MusicLibrary.ViewModel
 
             foreach (var albumAtual in library1.Albums)
             {
-                Album novoAlbum = new Album(albumAtual.Value.First().Album);
-                novoAlbum.FirstLibraryMusics = new ObservableCollection<Music>(albumAtual.Value.OrderBy(m => m.Nome));
+                var tituloDoAlbum = albumAtual.Value.First().Album;
 
-                if (library2.ContainsAlbum(novoAlbum.Title))
+                if (library2.ContainsAlbum(tituloDoAlbum))
                 {
-                    novoAlbum.SecondLibraryMusics = new ObservableCollection<Music>(library2.GetAlbum(novoAlbum.Title).OrderBy(m => m.Nome));
-                    library2.RemoveAlbum(novoAlbum.Title);
+                    var segundoAlbum = library2.GetAlbum(tituloDoAlbum);
+
+
+                    var musicasRepetidas = segundoAlbum.Select(m => m.Nome).Intersect(albumAtual.Value.Select(m => m.Nome));
+                    if (musicasRepetidas.Any())
+                    {
+                        var novoAlbum = new Album(tituloDoAlbum)
+                         {
+                             FirstLibraryMusics = new ObservableCollection<Music>(albumAtual.Value.Where(m => musicasRepetidas.Contains(m.Nome)).OrderBy(m => m.Nome)),
+                             SecondLibraryMusics = new ObservableCollection<Music>(segundoAlbum.Where(m => musicasRepetidas.Contains(m.Nome)).OrderBy(m => m.Nome)),
+                         };
+
+                        library2.RemoveAlbum(novoAlbum.Title);
+
+                        this.albuns.Add(novoAlbum);
+                    }
                 }
-
-                this.albuns.Add(novoAlbum);
-            }
-
-            foreach (var albumAtual in library2.Albums)
-            {
-                Album novoAlbum = new Album(albumAtual.Value.First().Album);
-                novoAlbum.SecondLibraryMusics = new ObservableCollection<Music>(albumAtual.Value.OrderBy(m => m.Nome));
-
-                this.albuns.Add(novoAlbum);
             }
         }
 
